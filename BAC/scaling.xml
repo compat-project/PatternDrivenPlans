@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='ASCII'?>
+
+<scalability>
+
+	<instance id="namd_kernel">
+		<formula></formula>
+	</instance>
+
+	<instance id="amber_kernel">
+		<formula></formula>
+	</instance>
+
+</scalability>

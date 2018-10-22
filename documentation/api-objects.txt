@@ -1,0 +1,9 @@
+patterns	patterns-module.html
+patterns.args	patterns-module.html#args
+patterns.dir_name	patterns-module.html#dir_name
+patterns.argp	patterns-module.html#argp
+patterns.multiscaleDoc	patterns-module.html#multiscaleDoc
+patterns.matrixFile	patterns-module.html#matrixFile
+patterns.matrixDoc	patterns-module.html#matrixDoc
+patterns.multiscaleFile	patterns-module.html#multiscaleFile
+patterns.output_filename	patterns-module.html#output_filename

@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='ASCII'?>
+<multiscale>
+  <info>
+    <job appID="ISR2D" project="compatpsnc2">
+      <!--Values for "computing" tag is either: ES, HMC or RC-->
+      <computing>ES</computing>
+      <modeltime>smc+max(bf,dd)</modeltime>
+      <task persistent="true" taskId="task">
+        <numberofcores>
+          <max>65</max>
+          <min>4</min>
+        </numberofcores>
+	<totaliterations>10</totaliterations>
+      </task>
+    </job>
+  </info>
+  <topology>
+    <!--instances for each submodel-->
+    <instance id="ic" mapper="InitialCondition"/>
+    <instance id="smc" submodel="SmoothMuscleCells"/>
+    <instance id="bf" submodel="BloodFlow"/>
+    <instance id="dd" submodel="DrugDiffusion"/>
+    <instance id="smc_out" mapper="Voxel"/>
+    <instance id="dd2smc" mapper="Add"/>
+    <instance id="smc2bf" mapper="Out"/>
+    <instance id="bf2smc" mapper="In"/>
+    <!--coupling of instances-->
+    <coupling from="ic" to="smc"/>
+    <coupling from="ic" to="smc"/>
+    <coupling from="smc" to="smc_out"/>
+    <coupling from="smc_out" to="dd"/>
+    <coupling from="smc_out" to="dd2smc"/>
+    <coupling from="dd" to="dd2smc"/>
+    <coupling from="dd" to="dd2smc"/>
+    <coupling from="dd2smc" to="smc"/>
+    <coupling from="smc_out" to="smc2bf"/>
+    <coupling from="smc_out" to="bf2smc"/>
+    <coupling from="smc2bf" to="bf"/>
+    <coupling from="smc2bf" to="bf"/>
+    <coupling from="smc2bf" to="bf"/>
+    <coupling from="bf" to="bf2smc"/>
+    <coupling from="bf" to="bf2smc"/>
+    <coupling from="bf" to="bf2smc"/>
+    <coupling from="bf" to="bf2smc"/>
+    <coupling from="bf" to="bf2smc"/>
+    <coupling from="bf" to="bf2smc"/>
+    <coupling from="bf" to="bf2smc"/>
+    <coupling from="bf2smc" to="smc"/>
+    <coupling from="bf2smc" to="smc"/>
+
+  </topology>
+  <middleware name="QCG">
+    <execution type="compat">
+      <executable>
+        <application name="muscle2"/>
+      </executable>
+      <arguments>
+        <value>isr_unified.cxa.rb</value>
+        <value>-p Results</value>
+      </arguments>
+      <stdout>
+        <directory>
+          <location type="URL">gsiftp://supermuc.lrz.de//home/hpc/pr92ge/di49neq/ISR2D/output</location>
+        </directory>
+      </stdout>
+      <stderr>
+        <directory>
+          <location type="URL">gsiftp://supermuc.lrz.de//home/hpc/pr92ge/di49neq/ISR2D/output</location>
+        </directory>
+      </stderr>
+      <stageInOut>
+        <!--Can contain <file> or <directory> tags, type=in or out-->
+        <file name="isr_unified.cxa.rb" type="in">
+          <location type="URL">/home/saad/COMPAT-Patterns-Software/OptimisationPart/ISR/isr_unified_prof.cxa.rb</location>
+        </file>
+        <directory name="." type="out">
+          <location type="URL">gsiftp://supermuc.lrz.de//home/hpc/pr92ge/di49neq/ISR2D/output</location>
+        </directory>
+      </stageInOut>
+      <environment>
+        <variable name="QCG_MODULES_LIST">compat/apps/bio/ISR2D</variable>
+      </environment>
+    </execution>
+  </middleware>
+</multiscale>

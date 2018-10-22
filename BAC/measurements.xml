@@ -1,0 +1,443 @@
+<?xml version='1.0' encoding='ASCII'?>
+
+<performance>
+	<instance id="namd_kernel">
+		<benchmark>
+			<file type="URL">gsiftp://qcg.man.poznan.pl:~/bac/input</file>
+			<script>
+				<![CDATA[ cd input/mineq_confs 
+				qcg_app namd eq0-benchmark.conf > ../replicas/rep0/equilibration/eq0.log]]>
+			</script>
+			<iterations> 100 </iterations>
+		</benchmark>
+
+	<resources name="supermuc">
+		<nodeType name="thin" frequency="2.6">
+
+			<profile>
+				<coreCount>1</coreCount>
+				<runTime>2265408</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>2</coreCount>
+				<runTime>1187136</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>4</coreCount>
+				<runTime>606528</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>8</coreCount>
+				<runTime>290304</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>16</coreCount>
+				<runTime>150336</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>32</coreCount>
+				<runTime>77760</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>64</coreCount>
+				<runTime>42508.8</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>128</coreCount>
+				<runTime>21254.4</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>256</coreCount>
+				<runTime>12960</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>512</coreCount>
+				<runTime>7257.6</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>1024</coreCount>
+				<runTime>7776</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>2048</coreCount>
+				<runTime>8294.4</runTime>
+				<energy>1000</energy>
+			</profile>
+		</nodeType>
+    
+		<nodeType name="fat" frequency="2.8">
+
+			<profile>
+				<coreCount>1</coreCount>
+				<runTime>2336947.2</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>2</coreCount>
+				<runTime>1164844.8</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>4</coreCount>
+				<runTime>583718.4</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>8</coreCount>
+				<runTime>297043.2</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>16</coreCount>
+				<runTime>153446.4</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>32</coreCount>
+				<runTime>88128</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>40</coreCount>
+				<runTime>71539.2</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>80</coreCount>
+				<runTime>38880</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>160</coreCount>
+				<runTime>20736</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>320</coreCount>
+				<runTime>13478.4</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>640</coreCount>
+				<runTime>10886.4</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>1280</coreCount>
+				<runTime>13996.8</runTime>
+				<energy>1000</energy>
+			</profile>
+		</nodeType>
+
+		<nodeType name="haswell" frequency="2.8">
+
+			<profile>
+				<coreCount>1</coreCount>
+				<runTime>2105222.4</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>2</coreCount>
+				<runTime>1071532.8</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>4</coreCount>
+				<runTime>539136</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>8</coreCount>
+				<runTime>274752</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>16</coreCount>
+				<runTime>141523.2</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>28</coreCount>
+				<runTime>83462.4</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>56</coreCount>
+				<runTime>42508.8</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>112</coreCount>
+				<runTime>23328</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>224</coreCount>
+				<runTime>12960</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>448</coreCount>
+				<runTime>7257.6</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>896</coreCount>
+				<runTime>3727.4</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>1792</coreCount>
+				<runTime>1524.2</runTime>
+				<energy>1000</energy>
+			</profile>
+		</nodeType>
+	</resources>
+
+	<resources name="eagle">
+		<nodeType name="haswell_128" frequency="2.8">
+
+			<profile>
+				<coreCount>1</coreCount>
+				<runTime>2265408</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>2</coreCount>
+				<runTime>1187136</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>4</coreCount>
+				<runTime>606528</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>8</coreCount>
+				<runTime>290304</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>16</coreCount>
+				<runTime>150336</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>32</coreCount>
+				<runTime>77760</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>64</coreCount>
+				<runTime>42508.8</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>128</coreCount>
+				<runTime>21254.4</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>256</coreCount>
+				<runTime>12960</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>512</coreCount>
+				<runTime>7257.6</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>1024</coreCount>
+				<runTime>7776</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>2048</coreCount>
+				<runTime>8294.4</runTime>
+				<energy>1000</energy>
+			</profile>
+		</nodeType>
+
+		<nodeType name="haswell_64" frequency="2.8">
+
+			<profile>
+				<coreCount>1</coreCount>
+				<runTime>2336947.2</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>2</coreCount>
+				<runTime>1164844.8</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>4</coreCount>
+				<runTime>583718.4</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>8</coreCount>
+				<runTime>297043.2</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>16</coreCount>
+				<runTime>153446.4</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>32</coreCount>
+				<runTime>88128</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>40</coreCount>
+				<runTime>71539.2</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>80</coreCount>
+				<runTime>38880</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>160</coreCount>
+				<runTime>20736</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>320</coreCount>
+				<runTime>13478.4</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>640</coreCount>
+				<runTime>10886.4</runTime>
+				<energy>1000</energy>
+			</profile>
+
+			<profile>
+				<coreCount>1280</coreCount>
+				<runTime>13996.8</runTime>
+				<energy>1000</energy>
+			</profile>
+		</nodeType>
+	</resources>
+	</instance>
+
+	<instance id="amber_kernel">
+		<benchmark>
+			<iterations> 1 </iterations>
+		</benchmark>
+
+	<resources name="supermuc">
+		<nodeType name="thin" frequency="2.6">
+			<profile>
+				<coreCount>1</coreCount>
+				<runTime>1200</runTime>
+				<energy>1000</energy>
+			</profile>
+		</nodeType>
+    
+		<nodeType name="fat" frequency="2.8">
+			<profile>
+				<coreCount>1</coreCount>
+				<runTime>1200</runTime>
+				<energy>1000</energy>
+			</profile>
+		</nodeType>
+					
+		<nodeType name="haswell" frequency="2.8">
+			<profile>
+				<coreCount>1</coreCount>
+				<runTime>1200</runTime>
+				<energy>1000</energy>
+			</profile>
+		</nodeType>
+	</resources>
+
+	<resources name="eagle">
+		<nodeType name="haswell_128" frequency="2.8">
+			<profile>
+				<coreCount>1</coreCount>
+				<runTime>1200</runTime>
+				<energy>1000</energy>
+			</profile>
+		</nodeType>
+    
+		<nodeType name="haswell_64" frequency="2.8">
+			<profile>
+				<coreCount>1</coreCount>
+				<runTime>1200</runTime>
+				<energy>1000</energy>
+			</profile>
+		</nodeType>
+	</resources>
+	</instance>
+</performance>

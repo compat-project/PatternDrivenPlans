@@ -1,0 +1,16 @@
+<nodes>
+	<host name="supermuc">
+		<node type="thin"     coresInnode="16" totalnodes="9216" frequency="2.70" />
+		<node type="fat"      coresInnode="40" totalnodes="205"  frequency="2.40" />
+	</host>
+
+	<host name="supermuc-p2">
+		<node type="haswell"  coresInnode="28" totalnodes="3072" frequency="2.60" />
+	</host>
+
+	<host name="eagle">
+		<node type="haswell_64"  coresInnode="28" totalnodes="492" frequency="2.60" />
+		<node type="haswell_128" coresInnode="32" totalnodes="460" frequency="2.60" />
+		<node type="haswell_256" coresInnode="28" totalnodes="52"  frequency="2.60" />
+	</host>
+</nodes>

@@ -1,0 +1,73 @@
+<qcgJob appId="hmm-inner-pm" project="compatpsnc2">
+  <task taskId="task">
+    <requirements>
+		<patternTopology>
+			<kernels>
+				<kernel id="dealammps"/>
+			</kernels>
+			<classes>
+				<class id="eagle-haswell_64">
+					<node host="eagle">haswell_64</node>
+				</class>
+				<class id="eagle-haswell_128">
+					<node host="eagle">haswell_128</node>
+				</class>
+				<class id="eagle-haswell_256">
+					<node host="eagle">haswell_256</node>
+				</class>
+			</classes>
+			<plans>
+				<plan id="test-hmm">
+					<criteria>
+						<time>P0Y0M0DT0H40M</time>
+						<preference>1</preference>
+					</criteria>
+					<group>
+						<kernel refid="dealammps">
+							<class refid="eagle-haswell_64">
+								<cores>28</cores>
+							</class>
+						</kernel>
+					</group>
+				</plan>
+			</plans>
+		</patternTopology>
+	</requirements>
+    <execution type="compat">
+      <executable>
+        <application name="bash"/>
+      </executable>
+      <arguments>
+        <value>${APP_DIR}/run_dealammps.sh</value>
+      </arguments>
+	<stdout>
+        	<directory>
+            		<location type="URL">gsiftp://qcg.man.poznan.pl/~/materials-qcg-test</location>
+          	</directory>
+        </stdout>
+        <stderr>
+        	<directory>
+            		<location type="URL">gsiftp://qcg.man.poznan.pl/~/materials-qcg-test</location>
+          	</directory>
+        </stderr>
+	<stageInOut>
+        	<directory name="macroscale_state" type="in">
+			<location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Materials/demoInputs/microcube/macroscale_state</location>
+        	</directory>
+        	<directory name="nanoscale_state" type="in">
+			<location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Materials/demoInputs/microcube/nanoscale_state</location>
+        	</directory>
+        	<file name="production_transfer.sh" type="in">
+			<location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Materials/production_transfer.sh</location>
+        	</file>
+        	<directory name="results" type="out">
+        		<location type="URL">gsiftp://qcg.man.poznan.pl/~/materials-qcg-test</location>
+        	</directory>
+	</stageInOut>
+        <environment>
+          <variable name="QCG_MODULES_LIST">compat/apps/materials/production</variable>
+          <variable name="QCG_POSTPROCESS">bash production_transfer.sh . results</variable>
+        </environment>
+    </execution>
+  </task>
+</qcgJob>

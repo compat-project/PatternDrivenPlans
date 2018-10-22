@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='ASCII'?>
+<multiscale>
+  <info>
+    <job appID="MATERIALS" project="compatpsnc2">
+      <!--Values for "computing" tag is either: ES, HMC or RC-->
+      <computing>HMC</computing>
+      <modeltime>macro</modeltime>
+      <task persistent="true" taskId="task">
+        <numberofcores>
+          <max>896</max>
+          <min>1</min>
+        </numberofcores>
+      </task>
+    </job>
+  </info>
+  <topology>
+    <!--instances for each submodel-->
+    <instance id="dealammps" submodel="continuum"/>
+  </topology>
+  <middleware name="QCG">
+    <execution type="compat">
+      <executable>
+        <application name="bash"/>
+      </executable>
+      <arguments>
+	<value>${APP_DIR}/run_dealammps.sh</value>
+      </arguments>
+      <stdout>
+       	<directory>
+          <location type="URL">gsiftp://qcg.man.poznan.pl/~/materials-qcg-test</location>      
+    	</directory>
+      </stdout>
+      <stderr>
+        <directory>
+          <location type="URL">gsiftp://qcg.man.poznan.pl/~/materials-qcg-test</location>
+       	</directory>
+      </stderr>
+      <stageInOut>
+      <!--Can contain <file> or <directory> tags, type=in or out-->
+       	<directory name="macroscale_state" type="in">
+		<location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Materials/demoInputs/microcube/macroscale_state</location>
+       	</directory>
+       	<directory name="nanoscale_state" type="in">
+		<location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Materials/demoInputs/microcube/nanoscale_state</location>
+       	</directory>
+       	<file name="production_transfer.sh" type="in">
+		<location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Materials/production_transfer.sh</location>
+       	</file>
+       	<directory name="results" type="out">
+       		<location type="URL">gsiftp://qcg.man.poznan.pl/~/materials-qcg-test</location>
+       	</directory>
+      </stageInOut>
+      <environment>
+        <variable name="QCG_MODULES_LIST">compat/apps/materials/production</variable>
+        <variable name="QCG_POSTPROCESS">bash production_transfer.sh . results</variable>
+      </environment> 
+     </execution>
+  </middleware>
+</multiscale>

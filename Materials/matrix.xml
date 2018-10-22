@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='ASCII'?>
+<submodels id="macro" name="macro workflow" xmml_version="0.4">
+	<submodel id="continuum" stateful="yes">
+		<instance class="MPIKernel" id="dealammps" type="kernel">
+			<restrictions>
+				<cpu number="x" min="1" max="896" />
+			</restrictions>
+			<available_resources>
+                                <resource name="eagle" nodeType="haswell_64"/>
+				<resource name="eagle" nodeType="haswell_128"/>
+                                <resource name="eagle" nodeType="haswell_256"/>
+			</available_resources>
+		</instance>
+	</submodel>
+</submodels>

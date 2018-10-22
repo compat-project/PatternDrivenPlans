@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='ASCII'?>
+<submodels id="SandBox" name="SandBox Application" xmml_version="0.4">
+
+	<submodel id="large">
+		<instance class="MPIKernel" id="large01" type="kernel">
+			<restrictions>
+				<cpu number="2**x" min="0" max="10" />
+			</restrictions>
+				
+			<available_resources>
+				<resource name="supermuc" nodeType="thin"/>
+				<resource name="supermuc" nodeType="fat"/> 
+				<resource name="eagle" nodeType="haswell_64"/>
+				<resource name="eagle" nodeType="haswell_128"/>
+				<resource name="eagle" nodeType="haswell_256"/>
+			</available_resources>
+		</instance>
+
+		<instance class="MPIKernel" id="large02" type="kernel">
+			<restrictions>
+				<cpu number="2**x" min="0" max="10" />
+			</restrictions>
+
+			<available_resources>
+				<resource name="supermuc" nodeType="thin"/>
+				<resource name="supermuc" nodeType="fat"/> 
+				<resource name="eagle" nodeType="haswell_64"/>
+				<resource name="eagle" nodeType="haswell_128"/>
+				<resource name="eagle" nodeType="haswell_256"/>
+			</available_resources>
+
+		</instance>
+	</submodel>
+	
+	<submodel id="small1 application" stateful="yes">
+		
+		<instance class="MPIKernel" id="small1" type="kernel">
+			<restrictions>
+				<cpu number="1" min="1" max="1" />
+			</restrictions>
+
+			<available_resources>
+				<resource name="supermuc" nodeType="thin"/>
+				<resource name="supermuc" nodeType="fat"/> 
+				<resource name="eagle" nodeType="haswell_64"/>
+				<resource name="eagle" nodeType="haswell_128"/>
+				<resource name="eagle" nodeType="haswell_256"/>
+			</available_resources>
+		</instance>
+	</submodel>
+
+	<submodel id="small2 application" stateful="yes">
+		<instance class="MPIKernel" id="small2" type="kernel">
+			<restrictions>
+				<cpu number="N/A" min="1" max="8" />
+			</restrictions>
+
+			<available_resources>
+				<resource name="supermuc" nodeType="thin"/>
+				<resource name="supermuc" nodeType="fat"/> 
+				<resource name="eagle" nodeType="haswell_64"/>
+				<resource name="eagle" nodeType="haswell_128"/>
+				<resource name="eagle" nodeType="haswell_256"/>
+			</available_resources>
+
+		</instance>
+	</submodel>
+</submodels>

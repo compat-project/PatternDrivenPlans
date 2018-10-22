@@ -1,0 +1,264 @@
+<?xml version="1.0" ?>
+ <qcgJob appId="bac-compat" project="compat" xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <task persistent="true" taskId="namd">
+   <note>namd ${PS_rep}</note>
+   <requirements>
+    <patternTopology>
+     <kernels>
+      <kernel id="namd_kernel"/>
+     </kernels>
+     <classes>
+      <class id="c0">
+       <node host="supermuc">thin</node>
+       <node host="supermuc">fat</node>
+       <node host="supermuc">haswell</node>
+      </class>
+      <class id="c1">
+       <node host="eagle">haswell_128</node>
+       <node host="eagle">haswell_64</node>
+      </class>
+     </classes>
+     <plans>
+      <plan id="plan0">
+       <criteria>
+        <time>PT12H56M0S</time>
+        <preference>3</preference>
+       </criteria>
+       <group>
+        <kernel refid="namd_kernel">
+         <class refid="c0">
+          <cores>1008</cores>
+         </class>
+        </kernel>
+       </group>
+      </plan>
+      <plan id="plan1">
+       <criteria>
+        <time>PT12H56M0S</time>
+        <preference>2</preference>
+       </criteria>
+       <group>
+        <kernel refid="namd_kernel">
+         <class refid="c0">
+          <cores>1008</cores>
+         </class>
+        </kernel>
+       </group>
+      </plan>
+      <plan id="plan2">
+       <criteria>
+        <time>PT12H56M0S</time>
+        <preference>1</preference>
+       </criteria>
+       <group>
+        <kernel refid="namd_kernel">
+         <class refid="c0">
+          <cores>1008</cores>
+         </class>
+        </kernel>
+       </group>
+      </plan>
+     </plans>
+    </patternTopology>
+   </requirements>
+   <execution type="compat">
+    <executable>
+     <application name="bash"/>
+    </executable>
+    <arguments>
+     <value>bac-namd.sh</value>
+     <value>${PS_rep}</value>
+    </arguments>
+    <stageInOut>
+     <file name="bac-namd.sh" type="in">
+      <location type="URL">gsiftp://qcg.man.poznan.pl/compat/bac-xml/muc-bac-namd.sh</location>
+     </file>
+     <directory name="input" type="in">
+      <location type="URL">gsiftp://qcg.man.poznan.pl/compat/bac-xml/input</location>
+     </directory>
+     <file name="qcg.debug" type="out">
+      <location type="URL">gsiftp://qcg.man.poznan.pl/compat/bac-xml/output/output-muc-${JOB_ID}-namd-rep${PS_rep}.qcg.debug</location>
+     </file>
+     <file name="_stdouterr" type="out">
+      <location type="URL">gsiftp://qcg.man.poznan.pl/compat/bac-xml/output/output-muc-${JOB_ID}-namd-rep${PS_rep}.stdouterr</location>
+     </file>
+    </stageInOut>
+   </execution>
+   <parametersSweep>
+    <parameter>
+     
+				
+     <name>rep</name>
+     
+				
+     <value>
+      
+					
+      <loop>
+       
+						
+       <start>1</start>
+       
+						
+       <end>16</end>
+       
+						
+       <step>1</step>
+       
+						
+       <decimalPlaces>0</decimalPlaces>
+       
+					
+      </loop>
+      
+				
+     </value>
+     
+			
+    </parameter>
+   </parametersSweep>
+  </task>
+  <task extension="namd_PSit${PS_it}" taskId="amber">
+   <note>amber ${PS_rep}</note>
+   <requirements>
+    <patternTopology>
+     <kernels>
+      <kernel id="amber_kernel"/>
+     </kernels>
+     <classes>
+      <class id="c0">
+       <node host="supermuc">thin</node>
+       <node host="supermuc">fat</node>
+       <node host="supermuc">haswell</node>
+      </class>
+      <class id="c1">
+       <node host="eagle">haswell_128</node>
+       <node host="eagle">haswell_64</node>
+      </class>
+     </classes>
+     <plans>
+      <plan id="plan0">
+       <criteria>
+        <time>PT12H56M0S</time>
+        <preference>3</preference>
+       </criteria>
+       <group>
+        <kernel refid="amber_kernel">
+         <class refid="c0">
+          <cores>1</cores>
+         </class>
+        </kernel>
+       </group>
+      </plan>
+      <plan id="plan1">
+       <criteria>
+        <time>PT12H56M0S</time>
+        <preference>2</preference>
+       </criteria>
+       <group>
+        <kernel refid="amber_kernel">
+         <class refid="c0">
+          <cores>1</cores>
+         </class>
+        </kernel>
+       </group>
+      </plan>
+      <plan id="plan2">
+       <criteria>
+        <time>PT12H56M0S</time>
+        <preference>1</preference>
+       </criteria>
+       <group>
+        <kernel refid="amber_kernel">
+         <class refid="c0">
+          <cores>1</cores>
+         </class>
+        </kernel>
+       </group>
+      </plan>
+     </plans>
+    </patternTopology>
+   </requirements>
+   <execution type="compat">
+    <executable>
+     <application name="bash"/>
+    </executable>
+    <arguments>
+     <value>bac-amber.sh</value>
+     <value>${PS_rep}</value>
+    </arguments>
+    <stageInOut>
+     <file name="bac-amber.sh" type="in">
+      <location type="URL">gsiftp://qcg.man.poznan.pl/compat/bac-xml/muc-bac-amber.sh</location>
+     </file>
+     <directory name="input/replicas/rep${PS_rep}" type="out">
+      <location type="URL">gsiftp://qcg.man.poznan.pl/compat/bac-xml/output/output-muc-${JOB_ID}-rep${PS_rep}</location>
+     </directory>
+     <file name="qcg.debug" type="out">
+      <location type="URL">gsiftp://qcg.man.poznan.pl/compat/bac-xml/output/output-muc-${JOB_ID}-amber-rep${PS_rep}.qcg.debug</location>
+     </file>
+     <file name="amber.log" type="out">
+      <location type="URL">gsiftp://qcg.man.poznan.pl/compat/bac-xml/output/output-muc-${JOB_ID}-amber-rep${PS_rep}.log</location>
+     </file>
+     <file name="_stdouterr" type="out">
+      <location type="URL">gsiftp://qcg.man.poznan.pl/compat/bac-xml/output/output-muc-${JOB_ID}-amber-rep${PS_rep}.stdouterr</location>
+     </file>
+    </stageInOut>
+   </execution>
+   <workflow>
+    <parent triggerState="FINISHED">namd_PSit${PS_it}</parent>
+   </workflow>
+   <parametersSweep>
+    <parameter>
+     <name>it</name>
+     <value>
+      
+					
+      <loop>
+       
+						
+       <start>0</start>
+       
+						
+       <end>15</end>
+       
+						
+       <step>1</step>
+       
+						
+       <decimalPlaces>0</decimalPlaces>
+       
+					
+      </loop>
+      
+				
+     </value>
+    </parameter>
+    <parameter>
+     <name>rep</name>
+     <value>
+      
+					
+      <loop>
+       
+						
+       <start>1</start>
+       
+						
+       <end>16</end>
+       
+						
+       <step>1</step>
+       
+						
+       <decimalPlaces>0</decimalPlaces>
+       
+					
+      </loop>
+      
+				
+     </value>
+    </parameter>
+   </parametersSweep>
+  </task>
+ </qcgJob>

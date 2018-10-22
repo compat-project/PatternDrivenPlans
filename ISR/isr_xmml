@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<model id="ISR2D" name="In-stent Restenosis" xmml_version="0.4" xmlns="http://www.mapper-project.eu/xmml">
+  <!--                                                                                                                                         
+      xMML description of ISR2D coupled application composed of                                                                               
+      turbulence-transport-equilibrium submodels.                                                                                              
+      @version: 0.2                                                                                                       
+      gMML:                                                                                                                                    
+      - finit = inititialization               (white diamond)                                                                                 
+      - Oi    = intermediate observation       (black circle)                                                                                  
+      - B     = boundary condition calculation (white triangle)                                                                                
+      - S     = solving step                   (white circle)                                                                                  
+      - Of    = final observation              (black diamond) 
+  -->
+  <description>
+    In-stent Restenosis two-dimentional model. Tahir et al. (2013) PLOS ONE.
+  </description>
+
+  <definitions>
+
+    <mapper id="Voxel" type="fan-out">
+      <ports>
+        <in id="In" />
+        <out id="InitialSolidOut"/>
+        <out id="NewSolidOut"/>
+        <out id="NewFluidOut"/>
+      </ports>
+    </mapper>
+
+    <mapper id="Out" type="fan-out">
+      <ports>
+        <in id="ObstaclesIn" />
+        <out id="Out1"/>
+        <out id="Out2"/>
+        <out id="Out3"/>
+        <out id="Out4"/>
+      </ports>
+    </mapper>
+
+    <mapper id="Add" type="fan-in">
+      <ports>
+        <in id="CellPositionsIn"/>
+        <in id="LatticeCoordinatesOut"/>
+        <in id="DrugConcentrationOut"/>
+        <out id="CellDrugConcentrationOut"/>
+      </ports>
+    </mapper>
+
+    <mapper id="In" type="fan-in">
+      <ports>
+        <in id="CellPositionsIn"/>
+        <in id="CoordinatesIn"/>
+        <in id="PressureIn"/>
+        <in id="ShearStressIn"/>
+        <in id="MaxShearStressIn"/>
+        <in id="AbsShearStressIn"/>
+        <in id="OsiIn"/>
+        <out id="CellMaxStressOut"/>
+        <out id="CellOsiOut"/>
+      </ports>
+    </mapper>
+
+
+    <submodel id="InitialCondition">
+      <timescale delta="0" total="0"/>
+      <spacescale delta="0" total="0"/>
+      <ports>
+        <out id="InitialSMCListOut" operator="Of"/>
+        <out id="InitialECListOut" operator="Of"/>
+      </ports>
+    </submodel>
+
+    <submodel id="SmoothMuscleCells" stateful="yes">
+      <timescale delta="1E-0" total="1E+1"/>
+      <spacescale delta="1E-2" total="1E+1"/>
+      <ports>
+        <in id="InitialSMCListIn" operator="finit"/>
+        <in id="InitialECListIn" operator="finit"/>
+        <in id="CellPositionsOut" operator="S"/>
+        <in id="CellDrugConcentrationIn" operator="S"/>
+        <out id="CellMaxStressIn" operator="Oi"/>
+        <out id="CellOsiIn" operator="Oi"/>
+      </ports>
+    </submodel>
+
+    <submodel id="DrugDiffusion">
+      <timescale delta="1E-6" total="1E-4"/>
+      <spacescale delta="1E-3" total="1E-2"/>
+      <ports>
+        <in id="NodeTypesIn" operator="finit"/>
+        <out id="LatticeCoordinatesOut" operator="Of"/>
+        <out id="DrugConcentrationOut"  operator="Of"/>
+      </ports>
+    </submodel>
+
+    <submodel id="BloodFlow">
+      <timescale delta="0" total="0"/>
+      <ports>
+        <in id="InitialSolidIn" operator="finit"/>
+        <in id="CoordinatesOut" operator="S"/>
+        <in id="LBLinksOut" operator="S"/>
+        <in id="PressureOut" operator="S"/>
+        <in id="ShareStessOut" operator="S"/>
+        <in id="MaxShearStressOut" operator="S"/>
+        <in id="AbsShearStressOut" operator="S"/>
+        <in id="OsiOut" operator="S"/>
+
+        <out id="equilibrium_out" operator="Of"/>
+      </ports>
+    </submodel>
+
+
+  </definitions>
+
+  <topology>
+
+    <instance id="ic" mapper="InitialCondition"/>
+    <instance id="smc" submodel="SmoothMuscleCells"/>
+    <instance id="bf" submodel="BloodFlow"/>
+    <instance id="dd" submodel="DrugDiffusion"/>
+    <instance id="smc_out" mapper="Voxel"/>
+    <instance id="dd2smc" mapper="Add"/>
+    <instance id="smc2bf" mapper="Out"/>
+    <instance id="bf2smc" mapper="In"/>
+
+    <coupling from="ic" to="smc"/>
+    <coupling from="ic" to="smc"/>
+    <coupling from="smc" to="smc_out"/>
+    <coupling from="smc_out" to="dd"/>
+    <coupling from="smc_out" to="dd2smc"/>
+    <coupling from="dd" to="dd2smc"/>
+    <coupling from="dd" to="dd2smc"/>
+    <coupling from="dd2smc" to="smc"/>
+    <coupling from="smc_out" to="smc2bf"/>
+    <coupling from="smc_out" to="bf2smc"/>
+    <coupling from="smc2bf" to="bf"/>
+    <coupling from="smc2bf" to="bf"/>
+    <coupling from="smc2bf" to="bf"/>                                                                                                          
+    <coupling from="bf" to="bf2smc"/>                                                                                                          
+    <coupling from="bf" to="bf2smc"/>                                                                                                          
+    <coupling from="bf" to="bf2smc"/>                                                                                                          
+    <coupling from="bf" to="bf2smc"/>                                                                                                          
+    <coupling from="bf" to="bf2smc"/>                                                                                                          
+    <coupling from="bf" to="bf2smc"/>                                                                                                          
+    <coupling from="bf" to="bf2smc"/>                                                                                                          
+    <coupling from="bf2smc" to="smc"/>                                                                                                         
+    <coupling from="bf2smc" to="smc"/>    
+
+  </topology>
+
+</model>
+
+

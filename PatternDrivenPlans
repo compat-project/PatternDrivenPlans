@@ -1,0 +1,6 @@
+#!/bin/bash
+
+source /home/plgrid-groups/plggcompat/anaconda2/bin/activate performance-database
+
+python $COMPAT_OPTIMISATIONPART_DIR/PatternDrivenPlans.py $*
+

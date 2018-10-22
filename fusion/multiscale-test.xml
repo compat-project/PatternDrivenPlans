@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='ASCII'?>
+<multiscale>
+  <info>
+    <job appID="TTE" project="compatpsnc2">
+      <!--Values for "computing" tag is either: ES, HMC or RC-->
+      <computing>ES</computing>
+      <modeltime>transp + equil + turb</modeltime>
+      <task persistent="true" taskId="task">
+        <numberofcores>
+          <max>2060</max>
+          <min>128</min>
+        </numberofcores>
+	<totaliterations>10</totaliterations>
+      </task>
+    </job>
+  </info>
+  <topology>
+    <!--instances for each submodel-->
+    <instance id="init" submodel="initialState"/>
+    <instance id="transp" submodel="transport"/>
+    <instance id="turb" submodel="turbulence"/>
+    <instance id="equil" submodel="equilibrium"/>
+    <instance id="dupEquil" mapper="dupEquil"/>
+    <instance id="dupCorep" mapper="dupCorep"/>
+    <instance id="f2dv" submodel="fluxesToDVs"/>
+    <!--coupling of instances-->
+    <coupling from="init" to="transp"/>
+    <coupling from="init" to="transp"/>
+    <coupling from="init" to="transp"/>
+    <coupling from="init" to="transp"/>
+    <coupling from="init" to="transp"/>
+    <coupling from="init" to="transp"/>
+    <coupling from="transp" to="dupCorep"/>
+    <coupling from="transp" to="equil"/>
+    <coupling from="dupCorep" to="turb"/>
+    <coupling from="dupCorep" to="f2dv"/>
+    <coupling from="dupCorep" to="transp"/>
+    <coupling from="equil" to="dupEquil"/>
+    <coupling from="dupEquil" to="turb"/>
+    <coupling from="dupEquil" to="f2dv"/>
+    <coupling from="dupEquil" to="transp"/>
+    <coupling from="turb" to="f2dv"/>
+    <coupling from="f2dv" to="transp"/>
+  </topology>
+  <middleware name="QCG">
+    <execution type="compat">
+      <executable>
+        <application name="muscle2"/>
+      </executable>
+      <arguments>
+	<value>unified.cxa.rb</value>
+      </arguments>
+      <stdout>
+	<directory>
+          <location type="URL">gsiftp://qcg.man.poznan.pl/~/qcg-test-demo</location>
+	</directory>
+      </stdout>
+      <stderr>
+	<directory>
+          <location type="URL">gsiftp://qcg.man.poznan.pl/~/qcg-test-demo</location>
+	</directory>
+      </stderr>
+      <stageInOut>
+	<!--Can contain <file> or <directory> tags, type=in or out-->
+	<file name="unified.cxa.rb" type="in">
+          <location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Fusion/FastTrack/QCG/DEMO/simulation/unified.cxa.rb</location>
+	</file>
+	<file name="inputs.tgz" type="in">
+          <location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Fusion/FastTrack/QCG/DEMO/simulation/inputs.tgz</location>
+	</file>
+	<file name="extract_inputs.sh" type="in">
+          <location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Fusion/FastTrack/QCG/DEMO/simulation/extract_inputs.sh</location>
+	</file>
+	<file name="prepare_outputs.sh" type="in">
+          <location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Fusion/FastTrack/QCG/DEMO/simulation/prepare_outputs.sh</location>
+	</file>
+	<directory name="outputs" type="out">
+          <location type="URL">gsiftp://qcg.man.poznan.pl/~/qcg-test-demo</location>
+	</directory>
+      </stageInOut>
+      <environment>
+        <variable name="QCG_MODULES_LIST">compat/apps/fusion</variable>
+        <variable name="QCG_PREPROCESS">extract_inputs.sh</variable>
+        <variable name="QCG_POSTPROCESS">prepare_outputs.sh</variable>
+      </environment>
+    </execution>
+  </middleware>
+</multiscale>

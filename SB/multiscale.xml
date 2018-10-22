@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='ASCII'?>
+<multiscale>
+  <info>
+    <job appID="SandBox" project="compat">
+      <!--Values for "computing" tag is either: ES, HMC or RC-->
+      <computing> ES </computing>
+      <modeltime> large01+max(small1,small2) </modeltime> <!-- these should be instances-->
+      <task persistent="true" taskId="task">
+        <numberofcores>
+          <max> 1024 </max>
+          <min> 1 </min>
+        </numberofcores>
+      </task>
+    </job>
+  </info>
+  <topology>
+    <!--instances for each submodel-->
+    <instance id="large01" submodel="large"/>
+    <instance id="small1" submodel="small1"/>
+    <instance id="small2" submodel="small2"/>
+    <!--coupling of instances-->
+    <coupling from="large01" to="small2"/>
+    <coupling from="large01" to="small1"/>
+    <coupling from="small1" to="large01"/>
+    <coupling from="small2" to="large01"/>
+  </topology>
+  <middleware name="QCG">
+    <execution type="compat">
+      <executable>
+        <application name="muscle2"/>
+      </executable>
+      <arguments>
+        <value> tube.cxa.rb </value>
+      </arguments>
+      <stdout>
+        <directory>
+          <location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Bio/FluidFlow/results</location>
+        </directory>
+      </stdout>
+      <stderr>
+        <directory>
+          <location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Bio/FluidFlow/results</location>
+        </directory>
+      </stderr>
+      <stageInOut>
+        <!--Can contain <file> or <directory> tags, type=in or out-->
+        <file name="tube_unified.cxa.rb" type="in">
+          <!--<location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Bio/FluidFlow/workflow/tube_unified.cxa.rb</location>-->
+	  <location type="URL">/home/saad/COMPAT-Patterns-Software/OptimisationPart/SB/tube_unified.cxa.rb</location>
+        </file>
+	<file name="config_large.xml" type="in">
+          <location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Bio/FluidFlow/workflow/config_large.xml</location>
+        </file>
+	<file name="config_small.xml" type="in">
+          <location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Bio/FluidFlow/workflow/config_small.xml</location>
+        </file>
+        <directory name="outputs" type="out">
+                    <location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Bio/FluidFlow/results</location>
+        </directory>
+      </stageInOut>
+      <environment>
+        <variable name="QCG_MODULES_LIST">compat/apps/bio/flow</variable>
+      </environment>
+    </execution>
+  </middleware>
+</multiscale>

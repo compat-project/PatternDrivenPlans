@@ -1,0 +1,1144 @@
+<?xml version="1.0" ?>
+  <qcgJob appId="ISR" project="compat" xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <task persistent="true" taskId="task">
+      <requirements>
+        <patternTopology>
+          <kernels>
+            <kernel id="smc">
+              <helper id="voxelizer"/>
+              <helper id="collector"/>
+              <helper id="distributor"/>
+              <helper id="thrombusMapper"/>
+              <helper id="blob"/>
+              <helper id="dd"/>
+            </kernel>
+            <kernel id="bf">
+              <helper id="voxelizer"/>
+              <helper id="collector"/>
+              <helper id="distributor"/>
+              <helper id="thrombusMapper"/>
+              <helper id="blob"/>
+              <helper id="dd"/>
+            </kernel>
+          </kernels>
+          <classes>
+            <class id="c1">
+              <node host="supermuc">thin</node>
+              <node host="eagle">haswell_128</node>
+            </class>
+          </classes>
+          <plans>
+            <plan id="plan0">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>0</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan1">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>1</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>2</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan2">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>2</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>3</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan3">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>3</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>4</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan4">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>4</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>5</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan5">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>5</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>6</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan6">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>6</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>7</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan7">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>7</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>8</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan8">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>8</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>9</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan9">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>9</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>10</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan10">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>10</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>11</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan11">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>11</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>12</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan12">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>12</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>13</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan13">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>13</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>14</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan14">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>14</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>15</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan15">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>15</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>16</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan16">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>16</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan17">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>17</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>2</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan18">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>18</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>3</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan19">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>19</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>4</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan20">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>20</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>5</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan21">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>21</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>6</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan22">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>22</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>7</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan23">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>23</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>8</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan24">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>24</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>9</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan25">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>25</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>10</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan26">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>26</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>11</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan27">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>27</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>12</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan28">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>28</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>13</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan29">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>29</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>14</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan30">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>30</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>15</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan31">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>31</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>16</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan32">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>32</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>17</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan33">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>33</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>18</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan34">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>34</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>19</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan35">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>35</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>20</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan36">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>36</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>21</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan37">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>37</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>22</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan38">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>38</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>23</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan39">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>39</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>24</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan40">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>40</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>25</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan41">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>41</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>26</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan42">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>42</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>27</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan43">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>43</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>28</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan44">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>44</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan45">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>45</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>2</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan46">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>46</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>4</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan47">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>47</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>8</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan48">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>48</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>16</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan49">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>49</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>32</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan50">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>50</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>64</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan51">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>51</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>128</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan52">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>52</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan53">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>53</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>2</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan54">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>54</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>4</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan55">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>55</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>8</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan56">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>56</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>16</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan57">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>57</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>32</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan58">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>58</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>64</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+            <plan id="plan59">
+              <criteria>
+                <time>PT0H0M0S</time>
+                <preference>59</preference>
+              </criteria>
+              <group>
+                <kernel refid="smc">
+                  <class refid="c1">
+                    <cores>1</cores>
+                  </class>
+                </kernel>
+                <kernel refid="bf">
+                  <class refid="c1">
+                    <cores>128</cores>
+                  </class>
+                </kernel>
+              </group>
+            </plan>
+          </plans>
+        </patternTopology>
+      </requirements>
+      <execution type="compat">
+        <executable>
+          <application name="muscle2"/>
+        </executable>
+        <arguments>
+          <value>isr_unified.cxa.rb</value>
+        </arguments>
+        <stdout>
+          <directory>
+            <location type="URL">gsiftp://supermuc.lrz.de//home/hpc/pr92ge/di49neq/ISR3D/output</location>
+          </directory>
+        </stdout>
+        <stderr>
+          <directory>
+            <location type="URL">gsiftp://supermuc.lrz.de//home/hpc/pr92ge/di49neq/ISR3D/output</location>
+          </directory>
+        </stderr>
+        <stageInOut>
+          <file name="isr_unified.cxa.rb" type="in">
+            <location type="URL">gsiftp://supermuc.lrz.de//home/hpc/pr92ge/di49neq/ISR3D/cxa/isr_unified.cxa.rb</location>
+          </file>
+          <directory name="." type="out">
+            <location type="URL">gsiftp://supermuc.lrz.de//home/hpc/pr92ge/di49neq/ISR3D/output</location>
+          </directory>
+        </stageInOut>
+        <environment>
+          <variable name="QCG_MODULES_LIST">compat/apps/bio/ISR3D</variable>
+        </environment>
+      </execution>
+    </task>
+  </qcgJob>

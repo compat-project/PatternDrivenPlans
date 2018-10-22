@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='ASCII'?>
+  <submodels id="ISR" name="in-stent restenosis modelling" xmml_version="0.4">
+
+    <submodel id="SmoothMuscleCells">
+      <instance class="MPIKernel" id="smc" type="kernel">
+        <restrictions>
+          <cpu number="x" min="1" max="4" />
+        </restrictions>
+        <available_resources>
+          <resource name="supermuc" nodeType="thin"/>
+          <!--<resource name="supermuc" nodeType="fat"/>-->
+          <resource name="supermuc-p2" nodeType="haswell"/>
+          <resource name="eagle" nodeType="haswell_64"/>
+          <resource name="eagle" nodeType="haswell_128"/>
+          <resource name="eagle" nodeType="haswell_256"/>
+        </available_resources>
+      </instance>
+    </submodel>
+
+    <submodel id="BloodFlow" stateful="yes">
+      <instance class="MPIKernel" id="bf" type="kernel">
+        <restrictions>
+          <cpu number="2**x" min="0" max="7" />
+        </restrictions>
+        <available_resources>
+          <resource name="supermuc" nodeType="thin"/>
+          <!--<resource name="supermuc" nodeType="fat"/>-->
+          <resource name="supermuc-p2" nodeType="haswell"/>
+          <resource name="eagle" nodeType="haswell_64"/>
+          <resource name="eagle" nodeType="haswell_128"/>
+          <resource name="eagle" nodeType="haswell_256"/>
+        </available_resources>
+      </instance>
+    </submodel>
+
+    <submodel id="DrugDiffusion">
+      <instance class="Kernel" id="dd" type="helper">
+        <restrictions>
+          <cpu number="1" min="1" max="1" />
+        </restrictions>
+        <available_resources>
+          <resource name="supermuc" nodeType="thin"/>
+          <!--<resource name="supermuc" nodeType="fat"/>-->
+          <resource name="supermuc-p2" nodeType="haswell"/>
+          <resource name="eagle" nodeType="haswell_64"/>
+          <resource name="eagle" nodeType="haswell_128"/>
+          <resource name="eagle" nodeType="haswell_256"/>
+        </available_resources>
+      </instance>
+    </submodel>
+    <mapper id="smc_out" type="fan-out"/>
+    <mapper id="dd2smc" type="fan-out"/>
+    <mapper id="smc2bf" type="fan-in"/>
+    <mapper id="bf2smc" type="fan-in"/>
+    <mapper id="ic" type="fan-out"/>
+  </submodels>

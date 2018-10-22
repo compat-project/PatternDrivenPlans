@@ -1,0 +1,106 @@
+\begin{theindex}
+
+  \item cost\_functions \textit{(module)}, \hyperpage{5}
+    \subitem cost\_functions.efficiencyBetween \textit{(function)}, 
+		\hyperpage{5}
+    \subitem cost\_functions.findClassName \textit{(function)}, 
+		\hyperpage{5}
+    \subitem cost\_functions.maximumEfficiency \textit{(function)}, 
+		\hyperpage{5}
+    \subitem cost\_functions.shortestTime \textit{(function)}, 
+		\hyperpage{5}
+
+  \indexspace
+
+  \item ES \textit{(module)}, \hyperpage{2}
+    \subitem ES.ES \textit{(function)}, \hyperpage{2}
+
+  \indexspace
+
+  \item models \textit{(module)}, \hyperpage{6}
+    \subitem models.getAuxModelTime \textit{(function)}, \hyperpage{6}
+    \subitem models.getCoresES \textit{(function)}, \hyperpage{6}
+    \subitem models.getCoresRC \textit{(function)}, \hyperpage{6}
+    \subitem models.getElements \textit{(function)}, \hyperpage{6}
+    \subitem models.getHostNamesPerSubmodel \textit{(function)}, 
+		\hyperpage{6}
+    \subitem models.getInstances \textit{(function)}, \hyperpage{6}
+    \subitem models.getModelTime \textit{(function)}, \hyperpage{6}
+    \subitem models.getNodeTypesPerSubmodel \textit{(function)}, 
+		\hyperpage{6}
+    \subitem models.getPerformanceInstances \textit{(function)}, 
+		\hyperpage{6}
+    \subitem models.getPrimary \textit{(function)}, \hyperpage{6}
+
+  \indexspace
+
+  \item patterns \textit{(module)}, \hyperpage{7}
+
+  \indexspace
+
+  \item QCG\_script\_generator \textit{(module)}, \hyperpage{3}
+    \subitem QCG\_script\_generator.QCG\_script\_ES \textit{(function)}, 
+		\hyperpage{3}
+    \subitem QCG\_script\_generator.QCG\_script\_RC \textit{(function)}, 
+		\hyperpage{3}
+    \subitem QCG\_script\_generator.remove\_blanks \textit{(function)}, 
+		\hyperpage{3}
+
+  \indexspace
+
+  \item RC \textit{(module)}, \hyperpage{4}
+    \subitem RC.RC \textit{(function)}, \hyperpage{4}
+
+  \indexspace
+
+  \item scenarios \textit{(module)}, \hyperpage{8--9}
+    \subitem scenarios.defineScenarios \textit{(function)}, 
+		\hyperpage{8}
+    \subitem scenarios.filterScenariosByHostsPerSubmodel \textit{(function)}, 
+		\hyperpage{8}
+    \subitem scenarios.filterScenariosByTypesPerSubmodel \textit{(function)}, 
+		\hyperpage{8}
+    \subitem scenarios.getBestPlansCombination \textit{(function)}, 
+		\hyperpage{8}
+    \subitem scenarios.getPerformance \textit{(function)}, 
+		\hyperpage{8}
+    \subitem scenarios.sameHostScenarios \textit{(function)}, 
+		\hyperpage{8}
+    \subitem scenarios.sameTypeScenarios \textit{(function)}, 
+		\hyperpage{8}
+    \subitem scenarios.scenario \textit{(class)}, \hyperpage{8--9}
+      \subsubitem scenarios.scenario.\_\_init\_\_ \textit{(method)}, 
+		\hyperpage{8}
+      \subsubitem scenarios.scenario.getCores \textit{(method)}, 
+		\hyperpage{8}
+      \subsubitem scenarios.scenario.getEfficiency \textit{(method)}, 
+		\hyperpage{8}
+      \subsubitem scenarios.scenario.getHostName \textit{(method)}, 
+		\hyperpage{9}
+      \subsubitem scenarios.scenario.getNodeType \textit{(method)}, 
+		\hyperpage{9}
+      \subsubitem scenarios.scenario.getNumberOfCores \textit{(method)}, 
+		\hyperpage{8}
+      \subsubitem scenarios.scenario.getNumberOfNodes \textit{(method)}, 
+		\hyperpage{9}
+      \subsubitem scenarios.scenario.getRealResourceUsage \textit{(method)}, 
+		\hyperpage{9}
+      \subsubitem scenarios.scenario.getRealResourceUsagePerSubmodel \textit{(method)}, 
+		\hyperpage{9}
+      \subsubitem scenarios.scenario.getSubmodelsTimes \textit{(method)}, 
+		\hyperpage{8}
+      \subsubitem scenarios.scenario.getTheoreticalResourceUsage \textit{(method)}, 
+		\hyperpage{9}
+      \subsubitem scenarios.scenario.getTheoreticalResourceUsagePerSubmodel \textit{(method)}, 
+		\hyperpage{9}
+      \subsubitem scenarios.scenario.getTotalNumberOfNodes \textit{(method)}, 
+		\hyperpage{8}
+      \subsubitem scenarios.scenario.getTotalTime \textit{(method)}, 
+		\hyperpage{8}
+      \subsubitem scenarios.scenario.hasSameHost \textit{(method)}, 
+		\hyperpage{9}
+      \subsubitem scenarios.scenario.hasSameType \textit{(method)}, 
+		\hyperpage{9}
+    \subitem scenarios.sortScenarios \textit{(function)}, \hyperpage{8}
+
+\end{theindex}

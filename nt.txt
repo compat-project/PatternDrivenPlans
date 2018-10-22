@@ -1,0 +1,103 @@
+QCG_URL = httpg://broker.compat.qcg.psnc.pl:8443/qcg/services/
+QCG_DN = /C=PL/O=GRID/O=PSNC/CN=qcg-broker/broker.compat.qcg.psnc.pl
+UserDN = /DC=org/DC=terena/DC=tcs/C=NL/O=Universiteit van Amsterdam/CN=S.A. Alowayyed saloway1@uva.nl
+ProxyLifetime = 20 Days 13 Hours 53 Minutes 9 Seconds
+
+---- CLUSTER: supermuc-p2 ----
+Category: [haswell]
+Node Type: haswell
+               Nodes: 3107 (offline=4[0.1%] up=3099[99.7%] down=4[0.1%])
+               Cores: 86996 (avail=86772[99.7%] free=86772[100.0%])
+      Cores per node: 3099x28cores
+     Memory per node: 3x505MB 8x251MB 3088x63MB
+ Free cores per node: 3099x28
+
+---- CLUSTER: agave9 ----
+Category: [default]
+Node Type: default
+               Nodes: 1 (down=1[100.0%])
+               Cores: 2 (avail=0[0.0%] free=0[0.0%])
+      Cores per node: 
+     Memory per node: 
+ Free cores per node: 
+
+---- CLUSTER: supermuc ----
+Category: [fat]
+Node Type: fat
+               Nodes: 205 (down=205[100.0%])
+               Cores: 8200 (avail=0[0.0%] free=0[0.0%])
+      Cores per node: 
+     Memory per node: 
+ Free cores per node: 
+
+Category: [thin]
+Node Type: thin
+               Nodes: 9288 (offline=517[5.6%] up=8770[94.4%] down=1[0.0%])
+               Cores: 148608 (avail=140320[94.4%] free=140320[100.0%])
+      Cores per node: 8770x16cores
+     Memory per node: 8770x31MB
+ Free cores per node: 8770x16
+
+---- CLUSTER: hartree ----
+Category: []
+               Nodes: 119 (offline=4[3.4%] up=110[92.4%] down=5[4.2%])
+               Cores: 1904 (avail=1760[92.4%] free=1760[100.0%])
+      Cores per node: 110x16cores
+     Memory per node: 3x64395MB 106x64396MB 1x56332MB
+ Free cores per node: 110x16
+
+---- CLUSTER: eagle ----
+Category: [intel, haswell, haswell_2600mhz, fdr, huawei, 128GB]
+Node Type: haswell
+               Nodes: 419 (offline=24[5.7%] up=378[90.2%] down=17[4.1%])
+               Cores: 11732 (avail=10584[90.2%] free=4882[46.1%])
+      Cores per node: 378x28cores
+     Memory per node: 378x128541MB
+ Free cores per node: 165x0 3x1 3x2 1x3 17x4 2x6 2x7 2x10 1x14 3x16 32x20 2x23 13x24 132x28
+
+Category: [intel, haswell, haswell_2600mhz, fdr, huawei, 256GB]
+Node Type: haswell
+               Nodes: 80 (offline=7[8.8%] up=68[85.0%] down=5[6.3%])
+               Cores: 2240 (avail=1904[85.0%] free=1156[60.7%])
+      Cores per node: 68x28cores
+     Memory per node: 68x257565MB
+ Free cores per node: 25x0 6x20 37x28
+
+Category: [intel, haswell, haswell_2600mhz, fdr, huawei, 64GB]
+Node Type: haswell
+               Nodes: 533 (offline=24[4.5%] up=490[91.9%] down=19[3.6%])
+               Cores: 14924 (avail=13720[91.9%] free=4653[33.9%])
+      Cores per node: 490x28cores
+     Memory per node: 490x64029MB
+ Free cores per node: 289x0 1x2 19x4 2x5 2x7 1x10 2x12 4x14 1x17 35x20 1x24 2x26 131x28
+
+Category: [intel, broadwell, broadwell_2500mhz, fdr, huawei, 128GB]
+Node Type: haswell_128
+               Nodes: 55 (offline=6[10.9%] up=47[85.5%] down=2[3.6%])
+               Cores: 1760 (avail=1504[85.5%] free=1476[98.1%])
+      Cores per node: 47x32cores
+     Memory per node: 47x128617MB
+ Free cores per node: 46x32 1x4
+
+Category: [epyc]
+               Nodes: 1 (up=1[100.0%])
+               Cores: 128 (avail=128[100.0%] free=0[0.0%])
+      Cores per node: 1x128cores
+     Memory per node: 1x516904MB
+ Free cores per node: 1x0
+
+Category: [gpu]
+               Nodes: 1 (up=1[100.0%])
+               Cores: 24 (avail=24[100.0%] free=24[100.0%])
+      Cores per node: 1x24cores
+     Memory per node: 1x128579MB
+ Free cores per node: 1x24
+
+Category: [phi]
+               Nodes: 3 (offline=2[66.7%] down=1[33.3%])
+               Cores: 864 (avail=0[0.0%] free=0[0.0%])
+      Cores per node: 
+     Memory per node: 
+ Free cores per node: 
+
+

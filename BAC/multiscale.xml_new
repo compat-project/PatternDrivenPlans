@@ -1,0 +1,101 @@
+<multiscale>
+    <info>
+        <job appID="bac-compat" project="compat">
+            <computing> RC </computing>
+            <modeltime> namd_kernel + amber_kernel </modeltime>
+	    
+	     <task taskId="namd" persistent="true">
+                <numberofcores>
+                    <min> 1 </min>
+                    <max> 2000 </max>
+                </numberofcores>
+		<note>namd ${it}</note>
+            </task>
+
+	<task taskId="amber" extension="namd_${it}">        
+                <numberofcores>
+                    <min> 1 </min>
+                    <max> 1 </max>
+                </numberofcores>
+		<note>amber ${it}</note>
+            </task>
+
+        </job>
+    </info>
+  
+	<topology>
+		<instance id="namd_kernel" submodel="namd_kernel"/>
+		<instance id="amber_kernel" submodel="amber_kernel"/>
+	</topology>
+
+    <middleware name="QCG">
+    
+	<task taskId="namd">
+        		<execution type="compat">
+			<executable>
+				<application name="bash"/>
+			</executable>
+			<arguments>
+				<value>${root_wd}/bac-namd.sh</value>
+				<value>${it}</value>
+			</arguments>
+			<stageInOut>
+				<file name="qcg.debug" type="out">
+					<location type="URL">output/output-muc-${JOB_ID}-namd-rep${it}.qcg.debug</location>
+				</file>
+				<file name="stdout" type="out">
+					<location type="URL">output/output-muc-${JOB_ID}-namd-rep${it}.stdout</location>
+				</file>
+				<file name="stderr" type="out">
+					<location type="URL">output/output-muc-${JOB_ID}-namd-rep${it}.stderr</location>
+				</file>
+			</stageInOut>
+		</execution>
+		<parametersSweep>
+			<start>1</start>
+			<end>16</end>
+			<step>1</step>
+			<decimalPlaces>0</decimalPlaces>
+		</parametersSweep>
+	</task>
+	
+	<task taskId="amber">
+		<execution type="compat">
+			<executable>
+				<application name="bash"/>
+			</executable>
+			<arguments>
+				<value>${root_wd}/bac-amber.sh</value>
+				<value>${it}</value>
+			</arguments>
+			<stageInOut>
+				<directory name="input/replicas/rep${it}" type="out">
+					<location type="URL">output/output-muc-${JOB_ID}-rep${it}</location>
+				</directory>
+				<file name="qcg.debug" type="out">
+					<location type="URL">output/output-muc-${JOB_ID}-amber-rep${it}.qcg.debug</location>
+				</file>
+				<file name="amber.log" type="out">
+					<location type="URL">output/output-muc-${JOB_ID}-amber-rep${it}.log</location>
+				</file>
+				<file name="stdout" type="out">
+					<location type="URL">output/output-muc-${JOB_ID}-amber-rep${it}.stdout</location>
+				</file>
+				<file name="stderr" type="out">
+					<location type="URL">output/output-muc-${JOB_ID}-amber-rep${it}.stderr</location>
+				</file>
+			</stageInOut>
+		</execution>
+		<workflow>
+			<parent triggerState="FINISHED">namd_${it}</parent>
+		</workflow>
+		<parametersSweep>
+			<start>1</start>
+			<end>16</end>
+			<step>1</step>
+			<decimalPlaces>0</decimalPlaces>
+		</parametersSweep>
+	</task>
+	
+    </middleware>
+</multiscale>

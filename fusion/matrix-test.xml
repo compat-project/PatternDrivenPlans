@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='ASCII'?>
+<submodels id="TTE" name="turbulence-transport-equilibrium workflow" xmml_version="0.4">
+	<submodel id="initialState">
+
+		<instance class="NativeKernel" id="init" type="helper">
+			<restrictions>
+				<cpu number="1" min="1" max="1" />
+			</restrictions>
+
+			<available_resources>
+				<resource name="supermuc" nodeType="thin"/>
+                                <resource name="supermuc" nodeType="fat"/>
+                                <resource name="supermuc" nodeType="haswell"/>
+                                <resource name="eagle" nodeType="haswell_64"/>
+				<resource name="eagle" nodeType="haswell_128"/>
+                                <resource name="eagle" nodeType="haswell_256"/>
+			</available_resources>
+        
+		</instance>
+	</submodel>
+
+	<submodel id="transport">
+		<instance class="NativeKernel" id="transp" type="kernel">
+			<restrictions>
+				<cpu number="1" min="1" max="1" />
+			</restrictions>
+
+			<available_resources>
+				<resource name="supermuc" nodeType="thin"/>
+                                <resource name="supermuc" nodeType="fat"/>
+                                <resource name="supermuc" nodeType="haswell"/>
+                                <resource name="eagle" nodeType="haswell_64"/>
+				<resource name="eagle" nodeType="haswell_128"/>
+                                <resource name="eagle" nodeType="haswell_256"/>
+			</available_resources>
+
+		</instance>
+	</submodel>
+
+	<submodel id="turbulence" stateful="yes">
+		<instance class="MPIKernel" id="turb" type="kernel">
+			<restrictions>
+				<cpu number="(2**x)" min="128" max="2048" />
+			</restrictions>
+
+			<available_resources>
+				<resource name="supermuc" nodeType="thin"/>
+                                <resource name="supermuc" nodeType="fat"/>
+                                <resource name="supermuc" nodeType="haswell"/>
+                                <resource name="eagle" nodeType="haswell_64"/>
+				<resource name="eagle" nodeType="haswell_128"/>
+                                <resource name="eagle" nodeType="haswell_256"/>
+			</available_resources>
+
+		</instance>
+	</submodel>
+
+	<submodel id="equilibrium">
+		<instance class="NativeKernel" id="equil" type="kernel">
+			<restrictions>
+				<cpu number="1" min="1" max="1" />
+			</restrictions>
+
+			<available_resources>
+				<resource name="supermuc" nodeType="thin"/>
+                                <resource name="supermuc" nodeType="fat"/>
+                                <resource name="supermuc" nodeType="haswell"/>
+                                <resource name="eagle" nodeType="haswell_64"/>
+				<resource name="eagle" nodeType="haswell_128"/>
+                                <resource name="eagle" nodeType="haswell_256"/>
+			</available_resources>
+
+		</instance>
+	</submodel>
+
+	<submodel id="fluxesToDVs">
+		<instance class="NativeKernel" id="f2dv" type="helper">
+			<restrictions>
+				<cpu number="1" min="1" max="1" />
+			</restrictions>
+
+			<available_resources>
+				<resource name="supermuc" nodeType="thin"/>
+                                <resource name="supermuc" nodeType="fat"/>
+                                <resource name="supermuc" nodeType="haswell"/>
+                                <resource name="eagle" nodeType="haswell_64"/>
+				<resource name="eagle" nodeType="haswell_128"/>
+                                <resource name="eagle" nodeType="haswell_256"/>
+			</available_resources>
+
+		</instance>
+	</submodel>
+
+	<mapper id="dupEquil" type="fan-out"/>
+	<mapper id="dupCorep" type="fan-out"/>
+
+</submodels>
