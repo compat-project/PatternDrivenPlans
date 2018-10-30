@@ -45,8 +45,7 @@
       <stageInOut>
         <!--Can contain <file> or <directory> tags, type=in or out-->
         <file name="tube_unified.cxa.rb" type="in">
-          <!--<location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Bio/FluidFlow/workflow/tube_unified.cxa.rb</location>-->
-	  <location type="URL">/home/saad/COMPAT-Patterns-Software/OptimisationPart/SB/tube_unified.cxa.rb</location>
+          <location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Bio/FluidFlow/workflow/tube_unified.cxa.rb</location>
         </file>
 	<file name="config_large.xml" type="in">
           <location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Bio/FluidFlow/workflow/config_large.xml</location>

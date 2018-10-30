@@ -70,8 +70,7 @@
       <stageInOut>
         <!--Can contain <file> or <directory> tags, type=in or out-->
         <file name="isr_unified.cxa.rb" type="in">
-          <!--<location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Bio/ISR2D/cxa/isr_unified.cxa.rb</location>-->
-          <location type="URL">/home/saad/COMPAT-Patterns-Software/OptimisationPart/ISR/isr_unified.cxa.rb</location>
+          <location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Bio/ISR2D/cxa/isr_unified.cxa.rb</location>
         </file>
         <directory name="." type="out">
           <location type="URL">gsiftp://qcg.man.poznan.pl/~/ISR2D-test</location>

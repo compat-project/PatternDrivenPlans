@@ -62,12 +62,10 @@
       <stageInOut>
 	<!--Can contain <file> or <directory> tags, type=in or out-->
 	<file name="unified.cxa.rb" type="in">
-          <!--<location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Fusion/FastTrack/QCG/BENCHMARK/simulation/unified.cxa.rb</location>-->
-	<location type="URL">/home/saad/COMPAT-Patterns-Software/OptimisationPart/fusion/unified.cxa.rb</location>
+          <location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Fusion/FastTrack/QCG/BENCHMARK/simulation/unified.cxa.rb</location>
 	</file>
 	<file name="inputs.tgz" type="in">
-          <!--<location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Fusion/FastTrack/QCG/BENCHMARK/simulation/inputs.tgz</location>-->
-	  <location type="URL">/home/saad/COMPAT-Patterns-Software/OptimisationPart/fusion/inputs.tgz</location>
+          <location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Fusion/FastTrack/QCG/BENCHMARK/simulation/inputs.tgz</location>
 	</file>
 	<file name="extract_inputs.sh" type="in">
           <location type="URL">gsiftp://qcg.man.poznan.pl//home/plgrid-groups/plggcompat/Fusion/FastTrack/QCG/BENCHMARK/simulation/extract_inputs.sh</location>

@@ -85,6 +85,10 @@ def calculateEfficiency(s,idx_p):
 	Naux = 0
         Taux = 0
         for idx in idx_a:
+		if idx >= len(s.getCores()):
+			Naux = Naux + 0.
+			Taux = Taux + 0.
+			continue
                 Naux   = Naux  + s.getCores()[idx]
 		Taux   = Taux + s.getSubmodelsTimes()[idx]
 

@@ -41,7 +41,8 @@ def calc_time(kernelNames, fdss, model_time, s):
 
 
 def calc_eff(s):
-   primary_idx = 1
+   primary_idx = 0#0 - 1
+
    eff = calculateEfficiency(s, primary_idx)
    s.setEfficiency(eff)
    return eff
@@ -60,7 +61,7 @@ def post_operations(formula, helpers, inputs):
    tar_inputs(inputs)
    map_kernel_names = ["ets_kernelB", "gem_kernelB", "chease_kernelB","imp4dv_kernelB"]
    core_kernel_names= ["transp","turb","equil"]
-   map_kernel_type = ["k","k","h","h"]
+   map_kernel_type = ["h","k","h","h"]#khhh - kkhh
    xmlfiles = ["tmp/ets.xml", "tmp/gem-ref.xml","tmp/chease.xml","tmp/ets.xml"]
 
    return map_kernel_names, core_kernel_names, map_kernel_type, xmlfiles
